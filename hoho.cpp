@@ -14,8 +14,11 @@
  
 void hoho::set(double result){
 	double A=ra;
- 	ra= ra+k*(result-(1.0/(1.0+pow(10,(rb-ra)/400.0))));
- 	rb= rb+k*((1-result)-(1.0/(1.0+pow(10,(A-rb)/400.0))));
+       	double B=rb;
+ 	ra= ra+k*(result-(1/(1+pow(10,(B-A)/400))));
+ 	rb= rb+k*((1-result)-(1/(1+pow(10,(A-B)/400))));
+	ra=round(ra);
+	rb=round(rb);
  }
  
 double hoho::geta(){
